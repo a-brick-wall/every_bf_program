@@ -1,6 +1,6 @@
 import sys
 sys.path.append('./')
-import brainfuck
+import bf_interpreter
 import warnings
 warnings.filterwarnings('ignore')
 warnings.simplefilter('ignore')
@@ -25,8 +25,8 @@ def bf_thread(eval_check,i):
         for digit in numberToBase(i.value, 7):
             code+=bf[digit]
         try:
-            if brainfuck.evaluate(code)==eval_check:
-                print(code + ' evaluates to ' + brainfuck.evaluate(code))
+            if bf_interpreter.evaluate(code)==eval_check:
+                print(code + ' evaluates to ' + bf_interpreter.evaluate(code))
                 i.value=-1000
                 break
 
